@@ -33,7 +33,7 @@ class YouTube : AbstractApplication("com.google.android.youtube") {
     }
 
     private fun waitAd() {
-        while (byStringRes("com.google.android.youtube:id/ad_progress_text").WaitOneSecond()) {}
+        while (byStringRes("com.google.android.youtube:id/ad_progress_text").waitOneSecond()) {}
     }
 
     private fun clickPause() {

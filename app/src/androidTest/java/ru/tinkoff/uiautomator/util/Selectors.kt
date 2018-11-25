@@ -32,6 +32,6 @@ fun BySelector.waitHasObject(): Boolean =
 fun BySelector.waitFindObjects(): List<UiObject2> =
     getDevice().wait(Until.findObjects(this), timeout)
 
-fun BySelector.WaitOneSecond():  Boolean =
+fun BySelector.waitOneSecond():  Boolean =
     getDevice().wait(Until.hasObject(this), TimeUnit.SECONDS.toMillis(1))
 
