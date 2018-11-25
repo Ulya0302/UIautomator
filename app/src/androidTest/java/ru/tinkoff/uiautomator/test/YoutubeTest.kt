@@ -12,6 +12,5 @@ class YoutubeTest : AbstractApplicationTest<YouTube>(YouTube()) {
         app.sendString("imagine dragons natural")
         app.clickOnVideoByNumber(1);
         app.stopOnTenSeconds()
-        Thread.sleep(2000)
     }
 }
