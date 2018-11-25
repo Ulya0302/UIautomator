@@ -1,0 +1,33 @@
+//TODO (1.1: Setup) : single module project, all setup in app/build.gradle. Only versions are here.
+buildscript {
+    //android
+    ext.sdkVersion = 28
+    ext.minVersion = 21
+    ext.androidPluginVersion = '3.2.1'
+    ext.kotlinVersion = '1.2.71'
+    ext.appCode = 1
+    ext.appVersion = "1.0.0-RC"
+    // testing
+    ext.androidTestRunnerVersion = '1.0.2'
+    ext.uiAutomatorVersion = '2.2.0'
+    ext.junitVersion = '4.12'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$androidPluginVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

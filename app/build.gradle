@@ -1,0 +1,32 @@
+//TODO (1.2: Setup) add plugins. com.android.testing is better but don't use since its most likely not to be used in real world app testing
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+//TODO (1.3: Setup) android plugin, don't need all functionality
+android {
+    compileSdkVersion sdkVersion
+    defaultConfig {
+        applicationId "ru.tinkoff.uiautomator"
+        minSdkVersion minVersion
+        targetSdkVersion sdkVersion
+        versionCode appCode
+        versionName appVersion
+        //TODO (1.4: Setup) EXCEPT runner
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    //TODO (1.5: Setup) don't need release build type, tests are not released to store
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+    }
+}
+
+//TODO (1.6: Setup) add some libs to use
+dependencies {
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    androidTestImplementation "com.android.support.test:runner:$androidTestRunnerVersion"
+    androidTestImplementation "androidx.test.uiautomator:uiautomator:$uiAutomatorVersion"
+}
+//TODO (1.7: Setup) finally we don't need application itself
